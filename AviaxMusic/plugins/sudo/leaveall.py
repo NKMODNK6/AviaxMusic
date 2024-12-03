@@ -6,7 +6,7 @@ from pyrogram.errors import InviteRequestSent
 from AviaxMusic import app
 from AviaxMusic.misc import SUDOERS
 from AviaxMusic.utils.database import get_assistant, is_active_chat
-from config import LOGGER_ID as LOG_GROUP_ID
+from config import LOG_GROUP_ID as LOG_ID
 
 @app.on_message(filters.command(["leaveall", f"leaveall@{app.username}"]) & SUDOERS)
 async def leave_all(client, message):
