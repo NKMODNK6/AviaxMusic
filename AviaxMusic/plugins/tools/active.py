@@ -10,7 +10,6 @@ from AviaxMusic.utils.database import (
     remove_active_chat,
     remove_active_video_chat,
 )
-from AviaxMusic.utils.database import add_served_chat
 from AviaxMusic.utils.database import get_assistant
 
 async def generate_join_link(chat_id: int):
@@ -24,10 +23,6 @@ def ordinal(n):
     return str(n) + suffix
 
 
-@app.on_message(filters.command(["join","vc","song","rankings", "config", "topgroups", "topusers", "topgame", "mytop", "ok", "bye", "welcome", "thanks","hii"] ,prefixes=["","/"]) & filters.group)
-async def bot_check(_, message):
-    chat_id = message.chat.id
-    await add_served_chat(chat_id)
 
 
 @app.on_message(filters.command(["activevc", "activevoice"]) & SUDOERS)
